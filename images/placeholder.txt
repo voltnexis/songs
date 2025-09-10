@@ -1,0 +1,19 @@
+This folder contains images for the VN Songs website.
+
+Required images:
+- default-song.jpg (default song cover)
+- default-artist.jpg (default artist photo)
+- default-album.jpg (default album cover)
+- hero-bg.jpg (hero section background)
+- artist-bg.jpg (artist page background)
+- album-bg.jpg (album page background)
+
+Song covers: song1.jpg, song2.jpg, etc.
+Artist photos: artist1.jpg, artist2.jpg, etc.
+Album covers: album1.jpg, album2.jpg, etc.
+
+Recommended image sizes:
+- Song covers: 300x300px
+- Artist photos: 300x300px
+- Album covers: 300x300px
+- Background images: 1920x1080px

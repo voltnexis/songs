@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Profile - VN Songs</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1><i class="fas fa-music"></i> VN Songs</h1>
+                <span>VoltNexis Songs</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="#artists">Artists</a></li>
+                <li><a href="index.html#albums">Albums</a></li>
+                <li><a href="index.html#top-songs">Top Songs</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search songs, artists, albums...">
+                <button onclick="searchSongs()"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Artist Profile Header -->
+        <section class="artist-profile-header">
+            <div class="artist-banner">
+                <img id="artistImage" src="images/default-artist.jpg" alt="Artist">
+                <div class="artist-info">
+                    <h1 id="artistName">Artist Name</h1>
+                    <p id="artistStats">0 songs • 0 albums • 0 followers</p>
+                    <div class="artist-actions">
+                        <button class="btn btn-play" onclick="playAllSongs()">
+                            <i class="fas fa-play"></i> Play All
+                        </button>
+                        <button class="btn btn-download" onclick="downloadAllSongs()">
+                            <i class="fas fa-download"></i> Download All
+                        </button>
+                        <button class="btn" onclick="followArtist()">
+                            <i class="fas fa-heart"></i> Follow
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Songs -->
+        <section class="artist-songs">
+            <h2><i class="fas fa-fire"></i> Popular Songs</h2>
+            <div class="song-list" id="popularSongs">
+                <!-- Popular songs will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Albums -->
+        <section class="artist-albums">
+            <h2><i class="fas fa-compact-disc"></i> Albums</h2>
+            <div class="album-grid" id="artistAlbums">
+                <!-- Albums will be loaded here -->
+            </div>
+        </section>
+
+        <!-- All Songs -->
+        <section class="all-songs">
+            <h2><i class="fas fa-list"></i> All Songs</h2>
+            <div class="song-list" id="allSongs">
+                <!-- All songs will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Similar Artists -->
+        <section class="similar-artists">
+            <h2><i class="fas fa-users"></i> Similar Artists</h2>
+            <div class="artist-grid" id="similarArtists">
+                <!-- Similar artists will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer">
+        <div class="player-info">
+            <img id="playerImage" src="images/default-song.jpg" alt="Song">
+            <div class="song-details">
+                <h4 id="playerTitle">Select a song</h4>
+                <p id="playerArtist">Artist</p>
+            </div>
+        </div>
+        <div class="player-controls">
+            <button onclick="previousSong()"><i class="fas fa-step-backward"></i></button>
+            <button id="playPauseBtn" onclick="togglePlayPause()"><i class="fas fa-play"></i></button>
+            <button onclick="nextSong()"><i class="fas fa-step-forward"></i></button>
+        </div>
+        <div class="player-progress">
+            <span id="currentTime">0:00</span>
+            <input type="range" id="progressBar" min="0" max="100" value="0" onchange="seekSong()">
+            <span id="totalTime">0:00</span>
+        </div>
+        <div class="player-volume">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" id="volumeSlider" min="0" max="100" value="50" onchange="changeVolume()">
+            <button onclick="downloadCurrentSong()" title="Download"><i class="fas fa-download"></i></button>
+        </div>
+        <audio id="audioPlayer"></audio>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>VN Songs</h3>
+                <p>Your ultimate destination for free music streaming and downloads.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#categories">Categories</a></li>
+                    <li><a href="#artists">Artists</a></li>
+                    <li><a href="index.html#albums">Albums</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 VoltNexis Songs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/artist.js"></script>
+</body>
+</html>
